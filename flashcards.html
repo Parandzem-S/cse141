@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-align: center;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            color: #333;
+            font-size: 1.1em;
+        }
+        .card:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" onclick="toggleAnswer(1)">
+            <div class="question">What type of variable are the numbers on football players’ shirts?</div>
+            <div class="answer" id="answer1">Nominal</div>
+        </div>
+        <div class="card" onclick="toggleAnswer(2)">
+            <div class="question">What type of variable is the number of pets in a family?</div>
+            <div class="answer" id="answer2">Ratio</div>
+        </div>
+        <div class="card" onclick="toggleAnswer(3)">
+            <div class="question">What type of variable is the country of residence?</div>
+            <div class="answer" id="answer3">Nominal</div>
+        </div>
+        <div class="card" onclick="toggleAnswer(4)">
+            <div class="question">What type of variable is the choice of auto (domestic or import)?</div>
+            <div class="answer" id="answer4">Nominal</div>
+        </div>
+        <div class="card" onclick="toggleAnswer(5)">
+            <div class="question">What type of variable is the distance (in miles) of commute to work?</div>
+            <div class="answer" id="answer5">Ratio</div>
+        </div>
+        <div class="card" onclick="toggleAnswer(6)">
+            <div class="question">What type of variable is the choice of diet (vegetarian, nonvegetarian)?</div>
+            <div class="answer" id="answer6">Nominal</div>
+        </div>
+        <div class="card" onclick="toggleAnswer(7)">
+            <div class="question">What type of variable is the time spent in the previous month browsing the World Wide Web?</div>
+            <div class="answer" id="answer7">Ratio</div>
+        </div>
+        <div class="card" onclick="toggleAnswer(8)">
+            <div class="question">What type of variable is ownership of a personal computer (yes, no)?</div>
+            <div class="answer" id="answer8">Nominal</div>
+        </div>
+        <div class="card" onclick="toggleAnswer(9)">
+            <div class="question">What type of variable is the marriage form of a society (monogamy, polygyny, polyandry)?</div>
+            <div class="answer" id="answer9">Ordinal</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(cardNumber) {
+            const answer = document.getElementById(`answer${cardNumber}`);
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
